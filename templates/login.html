@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <!-- Login Section -->
+  <section class="login-section">
+    <h2>Log In to Your Account</h2>
+    <form action="{%url 'login'%}" method="POST" class="login-form">
+      {% csrf_token %}
+        <label for="username">username</label>
+        <input type="text" id="username" name="username" required placeholder="Enter your username">
+      
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password">
+      
+        <button type="submit" class="cta-button">Log In</button>
+      </form>
+      <p>Don't have an account? <a href="{%url 'signup'%}">Sign Up</a></p>
+      
+  </section>
+{% endblock %}

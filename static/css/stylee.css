@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+
+/* Navigation Bar */
+ .navbar {
+    display: flex;
+     justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(90deg, #FF6F61, #FF9E80);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left a {
+    color: white;
+    margin-right: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.5s ease;
+}
+
+.navbar-left a:hover {
+    transform: scale(1.1);
+}
+
+.navbar-left .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.navbar-right a {
+    color: white;
+    margin-left: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.navbar-right a:hover {
+    color: #D24C42;
+    background-color: rgba(125, 48, 48, 0.2);
+    transform: scale(1.1);
+}
+
+.navbar-right button {
+    color: white;
+    margin-left: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: transform 0.5s ease;
+    border: none;
+}
+
+.navbar-right button:hover {
+    background-color: rgba(125, 48, 48, 0.2);
+    transform: scale(1.1);
+}
+
+
+.navbar-right button:active {
+    transform: scale(1);
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('/static/images/food.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    background-color: #FF6F61;
+    /* Warm color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #D24C42;
+    /* Slightly darker color on hover */
+}
+
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.text {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.image {
+    flex: 1;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.how-it-works {
+    padding: 60px 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+}
+
+.step {
+    width: 30%;
+    margin-bottom: 30px;
+}
+
+.step .text {
+    margin-bottom: 15px;
+}
+
+.step .image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.cta-section {
+    height: 100px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fc8b81;
+    color: white;
+}
+
+.cta-buttons a {
+    margin: 10px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background-color: white;
+    color: #FF6F61;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-buttons a:hover {
+    background-color: #FF6F61;
+    color: white;
+}
+
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+}
+
+
+/* Form Styles */
+.login-section,
+.signup-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.login-section h2,
+.signup-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid #ddd;
+    /* Light border around the form */
+    border-radius: 8px;
+    /* Rounded corners*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth*/
+}
+
+.login-form label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    /* Light border for inputs */
+    border-radius: 5px;
+    /* Rounded corners for inputs */
+    font-size: 1rem;
+    color: #333;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    /* Light inner shadow */
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #FF6F61;
+    /* Highlight border on focus */
+    outline: none;
+    /* Remove outline */
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle button shadow */
+}
+
+.login-form button:hover {
+    background-color: #D24C42;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+p a {
+    color: #FF6F61;
+    font-weight: bold;
+}
+
+/* Add some spacing around the form */
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+
+
+
+.home {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+.container1 {
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+}
+
+.headline1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.tagline1 {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.search-form1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+.search-form input:focus {
+    border-color: #FF6347;
+}
+
+.recipe-search {
+    padding: 15px;
+    font-size: 16px;
+    /* border: 2px solid #ccc; */
+    border-radius: 30px;
+    width: 100%;
+    max-width: 500px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+
+.search-button1 {
+    padding: 15px 25px;
+    background-color: #FF6347;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #FF4500;
+}
+
+
+
+
+

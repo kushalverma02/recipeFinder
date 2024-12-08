@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Hero Section -->
+  <header class="about" >
+    <div class="about-over-image-content">
+      <h1>Discover Your Next Favorite Recipe</h1>
+      <p>Find, Save, and Share Recipes from Around the World, Tailored to Your Taste and Dietary Preferences.</p>
+      <a href="{%url 'home'%}" class="about-go-to-search">Get Started</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-div-1" id="about">
+    <h2>What We’re All About</h2>
+    <div class="about-div-1-content">
+      <div class="about-div-1-text">
+        <p>We’re passionate about making cooking easy and fun. Our recipe finder lets you explore thousands of delicious recipes, from simple weeknight dinners to gourmet meals. Whether you're a beginner cook or an experienced chef, our platform helps you discover, save, and share your favorite recipes based on your dietary preferences, ingredients on hand, and time constraints.</p>
+      </div>
+      <div class="about-div-1-image">
+        <img src="{% static 'images/chiken curry.jpeg' %}">
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works" id="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="text">
+          <p><strong>Search Recipes:</strong> Enter ingredients, cuisines, or dietary preferences.</p>
+        </div>
+        <div class="image">
+          <img src="{% static 'images/butterchiken.jpeg'%}" alt="Search Step">
+
+        </div>
+      </div>
+      <div class="step">
+        <div class="text">
+          <p><strong>Browse and Filter:</strong> Refine search results based on time, difficulty, or meal type.</p>
+        </div>
+        <div class="image">
+          <img src="{% static 'images/chiken65.jpeg'%}" alt="Filter Step">
+        </div>
+      </div>
+      <div class="step">
+        <div class="text">
+          <p><strong>Create a Profile:</strong> Save custom preferences and get tailored recommendations.</p>
+        </div>
+        <div class="image">
+          <img src="{% static 'images/chiken curry.jpeg'%}" alt="Profile Step">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="links-section">
+    <!-- <h2>Ready to Start Cooking?</h2> -->
+    <div class="links-buttons">
+      <a href="{%url 'login'%}" class="links-button">Log In</a>
+      <a href="{%url 'signup'%}" class="links-button">Sign Up</a>
+      <a href="{%url 'home'%}" class="links-button">Go to Homepage</a>
+    </div>
+  </section>
+  {% endblock  %}

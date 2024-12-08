@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="home-page">
+    <div class="home-page-container">
+        <h1 class="home-page-headline">Recipe Finder</h1>
+        <p class="home-page-tagline">Discover recipes by name or ingredients. Start searching below!</p>
+        
+        <!-- Search Form -->
+        <form method="POST" action="{% url 'recipe_search' %}" class="home-page-search-form">
+            {% csrf_token %}
+            <input class="recipe-search-input" type="text" id="query" name="query" value="{{ query }}" placeholder="Enter recipe name or ingredient..." required>
+            <button type="submit" class="home-page-search-button">Search</button>
+        </form>
+    </div>
+</div>
+    <!-- Search Form results  -->
+    {% if recipes %}
+    <h2 style="text-align: center; color: #FF4500;">Recipes for "{{ query }}":</h2>
+    <div class="search-results"> 
+        {% for recipe in recipes %}
+            <div class="search-result-box">
+                <a href="{{ recipe.recipe.url }}" target="_blank" class="recipe-link">{{ recipe.recipe.label }}</a>
+                <a href="{{ recipe.recipe.url }}" target="_blank">
+                    <img class="search-result-image" src="{{ recipe.recipe.image }}" alt="{{ recipe.recipe.label }}">
+                </a>
+                <p>Recipe Source: {{ recipe.recipe.source }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% elif query %}
+    <p class="no-results">No recipes found for your query. Try another search.</p>
+{% endif %}
+    <!--recommendations-->
+    {% if user.is_authenticated %}
+    <h4 style="text-align: center; color: #FF4500; margin-top: 10px;">Recommendations for You</h4>
+    
+    {% if search_results %}
+        <div class="recommendation-section">
+            {% for result in search_results %}
+                <div class="recommendation-result-box">
+                    {% if result.recipes %}
+                        <ul class="recommendation-list">
+                            {% for recipe in result.recipes %}
+                                <li class="recommendation-list-item">
+                                    <a href="{{ recipe.recipe.url }}" target="_blank" class="recipe-link">
+                                        <h4>{{ recipe.recipe.label }}</h4>
+                                    </a>
+                                    <a href="{{ recipe.recipe.url }}" target="_blank">
+                                        <img class="recommendation-image" src="{{ recipe.recipe.image }}" alt="{{ recipe.recipe.label }}">
+                                    </a>
+                                    <p>Recipe Source: {{ recipe.recipe.source }}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p class="no-recipes">No recipes found for this query.</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-results">No recommendations found.</p>
+    {% endif %}
+{% else %}
+    <p class="not-logged-in">You need to be logged in to see recommendations. <a href="{% url 'login' %}">Login here</a></p>
+{% endif %}
+
+
+{% endblock %}
+

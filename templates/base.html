@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Recipe Finder</title>
+  <link rel="stylesheet" href="{% static 'css/st.css'%}">
+</head>
+<body>
+  
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="nav-bar-left">
+      <a href="{%url 'about'%}" class="logo">Recipe Finder</a>
+      <a href="{%url 'home'%}">Home</a>
+      <a href="{%url 'about'%}">About</a>
+      {% comment %} <a href="contact.html">Contact Us</a> {% endcomment %}
+    </div>
+    <div class="nav-bar-right">
+      {% if user.is_authenticated %}
+        hellow, &nbsp;<h1>{{ user.username }}</h1>
+        <form method="POST" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit" >Logout</button>
+        </form>
+        
+      {% else %}
+        <a href="{% url 'login' %}">Log In</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+      {% endif %}
+    </div>
+    
+  </nav>
+{% block content %}
+
+
+{% endblock  %}
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="{% url 'home'%}">Home</a> | 
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Service</a> |
+      <a href="#">Contact</a>
+    </div>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+    </div>
+  </footer>
+
+</body>
+</html>
